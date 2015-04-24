@@ -22,4 +22,13 @@ create table tbl_user(
 	userPass nvarchar(100),
 	cardNumber nvarchar(100)
 )
-
+go
+create table tbl_package
+(
+	packageID int primary key,
+	packageName nvarchar(100),
+	packagePrice float,
+	packageDetail ntext,
+)
+go
+test commit alo alo
