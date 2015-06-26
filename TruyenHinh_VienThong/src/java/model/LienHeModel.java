@@ -74,5 +74,49 @@ public class LienHeModel {
         return null;
     }
     
-    
+    public int updateInfoLienHe(LienHe obj) {
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            //STEP 2: Register JDBC driver
+            Class.forName(JDBC_DRIVER);
+
+            //STEP 3: Open a connection
+            System.out.println("Connecting to a selected database...");
+            conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            System.out.println("Connected database successfully...");
+
+            //STEP 4: Execute a query
+            stmt = conn.createStatement();
+
+            String sql = "UPDATE lien_he SET dia_chi = '" + obj.getDiaChi() + "', dien_thoai = '" + obj.getDienThoai()+ "', ten_cong_ty = '" + obj.getTenCongTy()+ "', email = '" + obj.getEmail()+ "', skype = '" + obj.getSkype()+ "' WHERE id = " + obj.getId();
+
+            System.out.println(sql);
+            return stmt.executeUpdate(sql);
+
+        } catch (SQLException se) {
+
+            se.printStackTrace();
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        } finally {
+
+            try {
+                if (stmt != null) {
+                    conn.close();
+                }
+            } catch (SQLException se) {
+
+            }
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+        return -1;
+    }
 }
