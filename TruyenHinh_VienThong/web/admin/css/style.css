@@ -1,0 +1,16 @@
+#header {width: 100%; height: 100px; background: #69C; line-height: 100px; color: #FFF; text-align: center; font-family: sans-serif; font-size: 30px;}
+
+#content {width: 100%;}
+#content-left {width: 20%;}
+#content-left ul {width: 100%; background: #9C9; list-style: none; padding: 0;}
+#content-left ul li {border-bottom: 1px solid #DEDEDE; padding: 20px 25px; color: #FFF; font-size: 18px; font-family: Tahoma;}
+#content-left ul li a {color: #FFF; font-size: 18px; font-family: Tahoma;}
+#content-left ul li:hover {background: #DEDEDE;}
+
+#content div.content {float: left;}
+
+#content-right {width: 75%;}
+
+#login {width: 60%; height: 300px; border: 1px solid #E8E8E8; margin: 100px auto; padding: 20px 20px;}
+
+.clear {clear: both;}
