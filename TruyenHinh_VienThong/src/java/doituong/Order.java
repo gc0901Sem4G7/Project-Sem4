@@ -42,16 +42,7 @@ public class Order {
         this.status = status;
     }
     
-    public Order(int id, String username, String tenDichVu, String mien, String status, Date dateRegister) {
-        this.id = id;
-        this.username = username;
-        this.tenDichVu = tenDichVu;
-        this.mien = mien;
-        this.status = status;
-        this.dateRegister = dateRegister;
-        this.dateBegin = dateBegin;
-        this.dateEnd = dateEnd;
-    }
+    
     
     public Order(int id, String username, String tenDichVu, String mien, String status, Date dateRegister, Date dateBegin, Date dateEnd) {
         this.id = id;
