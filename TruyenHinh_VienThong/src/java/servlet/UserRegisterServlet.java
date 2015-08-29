@@ -41,15 +41,30 @@ public class UserRegisterServlet extends HttpServlet {
         String phoneNumber = request.getParameter("phone_number");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
-        int packageId = Integer.parseInt(request.getParameter("package_id"));
-        int dealerId = Integer.parseInt(request.getParameter("dealer_id"));
+        String mien = request.getParameter("mien");
         
+        if (mien.equals("Mien Bac")) {
+          mien = "bac";
+        } else if (mien.equals("Mien Trung")) {
+          mien = "trung";
+        } else if (mien.equals("Mien Nam")) {
+          mien = "nam";
+        }
+        
+        int packageId = 0;
+        int dealerId = 0;
+        try {
+          packageId = Integer.parseInt(request.getParameter("package_id"));
+          dealerId = Integer.parseInt(request.getParameter("dealer_id"));
+        } catch (Exception ex) {
+          
+        }
         
         System.out.println(packageId);
-        User user = new User(username, password, name, cardId, phoneNumber, email, address, packageId, dealerId);
+        User user = new User(username, password, name, cardId, phoneNumber, email, address, packageId, dealerId, mien);
 
         UserModel userModel = new UserModel();
-        boolean isInsert = userModel.insert(user, "user");
+        boolean isInsert = userModel.insertUser(user, "user");
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         request.setAttribute("tenMenu", "register");
         if (isInsert) {
