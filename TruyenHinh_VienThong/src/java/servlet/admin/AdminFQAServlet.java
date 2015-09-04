@@ -20,17 +20,34 @@ public class AdminFQAServlet extends HttpServlet {
 
     private void setRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = 0;
+        String answer = "";
         try {
             id = Integer.parseInt(request.getParameter("id"));
         } catch (Exception ex) {
             
         }
+        
+        try {
+            answer = request.getParameter("answer") + "";
+        } catch (Exception ex) {
+            
+        }
+        
         request.setAttribute("request", "FQA");
         FQA fqaObject = new FQA();
         adminFQAModel = new AdminFQAModel();
-        if (id != 0) {
+        if (id != 0 && (answer.equals("null") || answer.equals(""))) {
             fqaObject = adminFQAModel.getFQAById(id, "fqa");
             request.setAttribute("fqaObject", fqaObject);
+            request.setAttribute("request", "FQAReply");
+        }
+        
+        if (!answer.equals("null") && !answer.equals("")) {
+            fqaObject = adminFQAModel.getFQAById(id, "fqa");
+            fqaObject.setAnswer(answer);
+            adminFQAModel.update(fqaObject, "fqa");
+            
+            request.setAttribute("request", "FQA");
         }
         
         FQAModel fqaModel = new FQAModel();
