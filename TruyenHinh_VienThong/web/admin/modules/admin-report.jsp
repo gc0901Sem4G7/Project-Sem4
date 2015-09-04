@@ -53,7 +53,7 @@
         <br>
         <br>
         
-        <input type="checkbox" value="thoigian" onclick="clickTime(this);" /> Thời gian đăng ký
+        <input type="checkbox" value="thoigian" onclick="clickTime(this);" /> Thời gian bắt đầu
         
         <select id="thoiGianLoc" style="display: none;">
           <option value="">Chọn tháng</option>
@@ -136,6 +136,7 @@
               <th>Ngày kết thúc</th>
               <th>Email</th>
               <th>Trạng thái</th>
+              <th>Gia hạn</th>
             </tr>
           </thead>
           <tbody>
@@ -185,20 +186,46 @@
                   %>
               </td>
               
+              <td>
+                <%
+                    if (trangThai.equals("Sắp hết hạn")) {
+
+                %>
+                <button type="button" class='<%= obj.getId() %> <%= obj.getEmail()%> <%= obj.getTenDichVu() %> btn btn-warning' onclick="giaHan(this);">Gửi email thông báo</button>
+
+                <%
+                }
+                %>
+            </td>
+              
+              
             </tr>
             <%
             } }
             %>
           </tbody>
         </table>
-        
+          
+        <form name="form2" action="account-user" method="post">
+            <input name="idSendMail" type="hidden" />
+            <input name="emailSend" type="hidden" />
+            <input name="tenGoiSend" type="hidden" />
+          </form>
       </div>
     </div>
 
     <br> <br>
 
   </div>
-
+          <script type="text/javascript">
+              function giaHan(obj) {
+                var form2 = document.form2;
+                form2.idSendMail.value = obj.className.split(" ")[0];
+                form2.emailSend.value = obj.className.split(" ")[1];
+                form2.tenGoiSend.value = obj.className.split(" ")[2];
+                form2.submit();
+              }
+          </script>
       
   </body>
 </html>
