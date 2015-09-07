@@ -22,7 +22,7 @@
         <th colspan="5">Thông tin <%= user.getUsername()%></th>
       </tr>
       <tr>
-        <th>Username</th>
+        <th>Tên đăng nhập</th>
         <th>Họ tên</th>
         <th>Số điện thoại</th>
         <th>Email</th>
@@ -49,22 +49,22 @@
     <div class="container-fluid">
 
       <div class="row" style="margin-right: 10px;">
-        <label class="green">Danh sách đặt hàng theo username</label>
+        <label class="green">Danh sách đặt hàng theo tên đăng nhập</label>
         <%
         if (listOrder!=null) {
         %>
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Username</th>
+                    <th>Tên đăng nhập</th>
                     <th>Tên dịch vụ</th>
                     <th>Miền</th>
-                    <th>Địa chỉ nắp đặt</th>
+                    <th>Địa chỉ lắp đặt</th>
                     <th>Thời lượng</th>
-                    <th>Giá tiền</th>
-                    <th>Status</th>
-                    <th>Date Register</th>
-                    <th>Date End</th>
+                    <th>Đơn giá/Tháng(VNĐ)</th>
+                    <th>Trạng thái</th>
+                    <th>Ngày đăng kí</th>
+                    <th>Ngày hết hạn</th>
                 </tr>
             </thead>
             <tbody>
@@ -100,7 +100,7 @@
     <br> <br>
 
   </div>
-      558
+      
       
   <%
         
@@ -117,12 +117,12 @@
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Username</th>
+                    <th>Tên đăng nhập</th>
                     <th>Tên dịch vụ</th>
                     <th>Thời lượng</th>
-                    <th>Giá tiền</th>
+                    <th>Đơn giá/Tháng(VNĐ)</th>
                     <th>Thành tiền</th>
-                    <th>Địa chỉ nắp đặt</th>
+                    <th>Địa chỉ lắp đặt</th>
                     <th>Mô tả</th>
                     <th>Trạng thái</th>
                     <th>Ngày đăng ký</th>

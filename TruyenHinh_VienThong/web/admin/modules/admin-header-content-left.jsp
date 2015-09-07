@@ -25,16 +25,16 @@
                             <%
                                 String admin = request.getSession().getAttribute("admin") + "";
                                 String mien = request.getSession().getAttribute("mien") + "";
-                                if (!"admin".equals(mien)) mien = "Dealer mien " + mien;
+                                if (!"admin".equals(mien)) mien = "Dai ly mien " + mien;
                                 else mien = "Admin";
                                 if (!"".equals(admin) && !"null".equals(admin)) {
                                     out.print(admin + "<br>(" + mien + ")");
                                     out.print("<br>");
-                                    out.print("Hay chon muc can quan ly");
+                                    out.print("Hãy chọn mục cần quản lý");
                                 }
                                 
                                 out.print("<br>");
-                                out.print("<a class='btn btn-info' href='logout?admin=" + admin + "' role='button'>Logout</a>");
+                                out.print("<a class='btn btn-info' href='logout?admin=" + admin + "' role='button'>Đăng xuất</a>");
                             %>
                         </li>
                         <li><a href="cacGoiDichVu">Các gói dịch vụ</a></li>

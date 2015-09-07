@@ -7,6 +7,26 @@ public class FQA {
     private String question;
 
     private String answer;
+    
+    private String username;
+    
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public FQA() {
     }
@@ -15,6 +35,19 @@ public class FQA {
         this.id = id;
         this.question = question;
         this.answer = answer;
+    }
+    public FQA(int id, String question, String answer, String username, String status) {
+        this.id = id;
+        this.question = question;
+        this.answer = answer;
+        this.username = username;
+        this.status = status;
+    }
+    public FQA(String question, String answer, String username, String status) {
+        this.question = question;
+        this.answer = answer;
+        this.username = username;
+        this.status = status;
     }
 
     public int getId() {

@@ -14,16 +14,16 @@
                 
                 <thead>
                     <tr>
-                        <th><span class="green">Cau hoi: </span><%= fqa.getQuestion() %></th>
+                        <th><span class="green">Câu hỏi: </span><%= fqa.getQuestion() %></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
-                            Admin tra loi: 
+                            Quản trị trả lời: 
                             <%
                             if ("".equals(fqa.getAnswer()) || "null".equals(fqa.getAnswer())) {
-                                out.print("<span style='color: #F60'>Pending</span>");
+                                out.print("<span style='color: #F60'>Chờ trả lời</span>");
                             } else {
                                 out.print(fqa.getAnswer());
                             }
@@ -42,7 +42,7 @@
         %>
         
         <form action="fqa" method="get" role="form" style="margin-right: 10px;">
-            <legend>Ban hay nhap cau hoi o day</legend>
+            <legend>Bạn hãy nhập câu hỏi ở đây</legend>
             <p style="color: #F60;">User cần đăng nhập trước khi đặt câu hỏi</p>
             <%
                 String message = request.getAttribute("message") + "";
@@ -53,11 +53,11 @@
                 }
             %>
             <div class="form-group">
-                <label for="" class="green">Noi dung</label><br><br>
+                <label for="" class="green">Nội dung</label><br><br>
                 <textarea rows="5" cols="30" name="cauHoi"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Gửi</button>
         </form>
     </div>
 

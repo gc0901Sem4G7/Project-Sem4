@@ -130,7 +130,7 @@
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
-              <th>Username</th>
+              <th>Tên đăng nhập</th>
               <th>Tên dịch vụ</th>
               <th>Ngày bắt đầu</th>
               <th>Ngày kết thúc</th>

@@ -33,7 +33,7 @@ public class FQAServlet extends HttpServlet {
     
     protected void doRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         boolean isInsert = false;
-        String cauHoi = request.getParameter("cauHoi") + "";
+        String cauHoi = request.getParameter("cauHoi") + "" + "cau hoi!!!";
         String admin = request.getSession().getAttribute("username") + "";
         if (!"".equals(admin) && !"null".equals(admin) && !"".equals(cauHoi) && !"null".equals(cauHoi)) {
             if (!isInsert) {

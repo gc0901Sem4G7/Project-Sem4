@@ -27,10 +27,10 @@
             <div class="row" style="margin-right: 10px;">
 
                 <form action="register" method="POST" role="form" style="width: 80%; margin: auto;">
-                    <a href="account-user" id="taiKhoanUser"><legend class="green">Tài khoản user</legend></a>
+                    <a href="account-user" id="taiKhoanUser"><legend class="green">Tài khoản Người dùng</legend></a>
                     
                     <% if (mien.equals("admin")) { %>
-                      <a href="account-admin" id="taiKhoanAdmin"><legend class="green">Tài khoản của Admin và Dealer</legend></a>
+                      <a href="account-admin" id="taiKhoanAdmin"><legend class="green">Tài khoản của Quản trị và Đại lý</legend></a>
                     <% } %>
                 </form>
             </div>

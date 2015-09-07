@@ -2,65 +2,102 @@ package doituong;
 
 public class DichVu {
 
-	private int id;
-	
-	private String tenDichVu;
-	
-	private String giaDichVu;
-	
-	private String moTa;
-	
-	private String trangThai;
+    private int id;
 
-	public DichVu() { }
-	
-	public DichVu(int id, String tenDichVu, String giaDichVu, String moTa, String trangThai) {
-		this.id = id;
-		this.tenDichVu = tenDichVu;
-		this.giaDichVu = giaDichVu;
-		this.moTa = moTa;
-		this.trangThai = trangThai;
-	}
+    private String tenDichVu;
 
-	public int getId() {
-		return id;
-	}
+    private String giaDichVu;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    private String moTa;
 
-	public String getTenDichVu() {
-		return tenDichVu;
-	}
+    private String trangThai;
 
-	public void setTenDichVu(String tenDichVu) {
-		this.tenDichVu = tenDichVu;
-	}
+    private int dealerId;
 
-        public String getGiaDichVu() {
-            return giaDichVu;
-        }
+    private String mien;
+    
+    public DichVu() { }
 
-        public void setGiaDichVu(String giaDichVu) {
-            this.giaDichVu = giaDichVu;
-        }
+    public DichVu(String tenDichVu, String giaDichVu, String moTa, int dealerId, String trangThai) {
+        this.tenDichVu = tenDichVu;
+        this.giaDichVu = giaDichVu;
+        this.moTa = moTa;
+        this.dealerId = dealerId;
+        this.trangThai = trangThai;
+    }
+    
+    public DichVu(int id, String tenDichVu, String giaDichVu, String moTa, int dealerId, String trangThai) {
+        this.id = id;
+        this.tenDichVu = tenDichVu;
+        this.giaDichVu = giaDichVu;
+        this.moTa = moTa;
+        this.dealerId = dealerId;
+        this.trangThai = trangThai;
+    }
+    public DichVu(String tenDichVu, String giaDichVu, String moTa, int dealerId, String trangThai, String mien) {
+        this.id = id;
+        this.tenDichVu = tenDichVu;
+        this.giaDichVu = giaDichVu;
+        this.moTa = moTa;
+        this.dealerId = dealerId;
+        this.trangThai = trangThai;
+        this.mien = mien;
+    }
 
-	public String getMoTa() {
-		return moTa;
-	}
+    public String getMien() {
+        return mien;
+    }
 
-	public void setMoTa(String moTa) {
-		this.moTa = moTa;
-	}
+    public void setMien(String mien) {
+        this.mien = mien;
+    }
 
-	public String getTrangThai() {
-		return trangThai;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setTrangThai(String trangThai) {
-		this.trangThai = trangThai;
-	}
-	
-	
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTenDichVu() {
+        return tenDichVu;
+    }
+
+    public void setTenDichVu(String tenDichVu) {
+        this.tenDichVu = tenDichVu;
+    }
+
+    public String getGiaDichVu() {
+        return giaDichVu;
+    }
+
+    public void setGiaDichVu(String giaDichVu) {
+        this.giaDichVu = giaDichVu;
+    }
+
+    public String getMoTa() {
+        return moTa;
+    }
+
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
+    }
+
+    public int getDealerId() {
+        return dealerId;
+    }
+
+    public void setDealerId(int dealerId) {
+        this.dealerId = dealerId;
+    }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
+    }
+    
 }

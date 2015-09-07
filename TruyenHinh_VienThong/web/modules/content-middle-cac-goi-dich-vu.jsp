@@ -5,13 +5,13 @@
 <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
     <div class="container-fluid">
         <div class="row">
-            <h1 class="green">Đăng ký các gói dịch vụ</h1>
+            <h1 class="green">Đăng ký mới gói dịch vụ</h1>
             <%
                 String vung = request.getParameter("vung") + "";
             %>
             
             <br>
-            <h4>Các bước đăng ký 1 gói dịch vụ</h4>
+            <h4>Quý khánh vui lòng làm theo các bước</h4>
             <br>
             
             Bước 1<br>
@@ -26,7 +26,7 @@
             <br>
             
             Bước 2<br>
-            Điền địa chỉ nắp đặt:
+            Điền địa chỉ lắp đặt:
             <p id="diaChiNapDatMessage"></p>
             <input type="text" name="" id="diaChiNapDat" class="form-control" onkeyup="getValueDiaChiNapDatToDiaChiNapDatAn();" placeholder="Nhập địa chỉ..." style="width: 50%;" />
             <br>
@@ -50,12 +50,12 @@
             <p id="phuongThucThanhToan"></p>
             
             <div class="form-group">
-              <label for="sel1">Select list:</label>
+              <!--<label for="sel1">Mời chọn: </label><-->
               <select class="form-control" onchange="getValueHinhThucThanhToanToHinhThucThanhToanAn();" id="hinhThucThanhToan">
                 <option selected="" value="chua chon">Chọn môt hình thức</option>
                 <option value="Tai nha">1. Tại nhà</option>
                 <option value="Truc tiep tai van phong cong ty">2. Trực tiếp tại văn phòng công ty</option>
-                <option value="Chuyen khoan ngan hang VCB. STK: 123456789123, Ten chu khoan: Nguyen Van A">3. Chuyển khoản ngân hàng VCB. STK: 123456789123, Tên chủ khoản: Nguyễn Văn A</option>
+                <option value="Chuyen khoan ngan hang VCB. STK: 123456789123, Ten chu khoan: Nguyen Van A">3. Chuyển khoản ngân hàng </option>
               </select>
             </div>
             
@@ -77,10 +77,10 @@
             <table class="table table-condensed table-hover">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Ten Dich Vu</th>
-                        <th>Gia Dich Vu</th>
-                        <th>Mo Ta</th>
+                        <!--<th>Id</th>-->
+                        <th>Tên Dịch Vụ</th>
+                        <th>Đơn Giá/ tháng(VNĐ)</th>
+                        <th>Mô tả</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -101,7 +101,7 @@
                     
                   %>
                   <tr>
-                    <td><%= obj.getId()%></td>
+                    <!--<td><%= obj.getId()%></td><-->
                     <td><%= obj.getTenDichVu()%></td>
                     <td class="giaTien<%= i %>"><%= obj.getGiaDichVu()%></td>
                     <td><%= obj.getMoTa() %></td>
@@ -152,9 +152,9 @@
     if (hinhthucthanhtoan == "Tai nha") {
       document.getElementById("noiThanhToan").innerHTML = "Bạn chọn thanh toán tại địa chỉ nhà bạn.";
     } else if (hinhthucthanhtoan == "Truc tiep tai van phong cong ty") {
-      document.getElementById("noiThanhToan").innerHTML = "Bạn chọn thanh toán tại công ty. Địa chỉ công ty chúng tôi  là 36 Hoàng Quốc Việt, vui lòng đến đóng tại đây";
+      document.getElementById("noiThanhToan").innerHTML = "Bạn chọn thanh toán tại công ty. Địa chỉ công ty chúng tôi là Tòa nhà Detech, số 8 Tôn Thất Thuyết, phường Mỹ Đình 2, quận Nam Từ Liêm, TP.Hà Nội. Vui lòng thanh toán tại đây";
     } else if (hinhthucthanhtoan == "Chuyen khoan ngan hang VCB. STK: 123456789123, Ten chu khoan: Nguyen Van A") {
-      document.getElementById("noiThanhToan").innerHTML = "Bạn chọn thanh toán theo chuyển khoản. Vui lòng thanh toán theo thông tin sau. Ngân hàng VCB. STK: 123456789123, Tên chủ khoản: Nguyễn Văn A";
+      document.getElementById("noiThanhToan").innerHTML = "Bạn chọn thanh toán theo chuyển khoản. Vui lòng thanh toán theo thông tin sau. Ngân hàng Thương mại cổ phần Ngoại thương Việt Nam – Sở giao dịch 198 Trần Quang Khải. Số Tài khoản: 0011001803620. Tên Chủ tài khoản: Công ty dịch vụ truyền thông DTH";
     }
   }
 
@@ -177,7 +177,7 @@
 
       var soThang = document.getElementsByClassName(classLayGiaTien)[0].innerHTML;
 
-      var msg = "Ban dang ky trong thoi gian " + thoiLuongGoiAn + "thang. Tong " + (thoiLuongGoiAn * soThang) + " VND";
+      var msg = "Ban da dang ki trong thoi gian " + thoiLuongGoiAn + "thang. Tong chi phi: " + (thoiLuongGoiAn * soThang) + " VND";
       document.getElementById('msgAn').value = msg;
       document.getElementById("mienDatForm").submit();
     }

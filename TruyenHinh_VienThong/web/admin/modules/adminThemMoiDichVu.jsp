@@ -18,24 +18,24 @@
                 %>
             </span>
 
-            <legend>Them moi dich vu</legend>
+            <legend>Thêm mới dịch vụ</legend>
 
             <div class="form-group">
-                <label for="">Ten dich vu</label>
+                <label for="">Tên dịch vụ</label>
                 <input type="text" class="form-control" name="tenDichVu" id="" placeholder="Input field">
             </div>
 
             <div class="form-group">
-                <label for="">Gia dich vu</label>
+                <label for="">Đơn giá /Tháng(VNĐ)</label>
                 <input type="text" class="form-control" name="giaDichVu" id="" placeholder="Input field">
             </div>
 
             <div class="form-group">
-                <label for="">Mo ta</label>
+                <label for="">Mô tả</label>
                 <input type="text" class="form-control" name="moTa" id="" placeholder="Input field">
             </div>
 
-            <button type="submit" class="btn btn-primary">Accept</button>
+            <button type="submit" class="btn btn-primary">Chấp nhận</button>
         </form>
 		
     </div>

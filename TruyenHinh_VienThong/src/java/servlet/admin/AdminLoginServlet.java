@@ -21,26 +21,34 @@ public class AdminLoginServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
+    protected void doRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String admin = request.getParameter("admin") + "";
         String password = request.getParameter("password");
 
         AdminModel adminModel = new AdminModel();
 
         HttpSession httpSession = request.getSession();
 
-        String mien = adminModel.checkLoginAdmin(username, password).toString();
-        if (mien != "") {
-            httpSession.setAttribute("username", username);
+        String mien = adminModel.checkLoginAdmin(admin, password).toString();
+        if (!"".equals(mien)) {
+            httpSession.setAttribute("admin", admin);
             httpSession.setAttribute("mien", mien);
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("trangQuanTri.jsp");
             request.setAttribute("status", "success");
             requestDispatcher.forward(request, response);
+        } else if ("".equals(admin) || "null".equals(admin)) {
+            response.sendRedirect("index.jsp");
         } else {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
             request.setAttribute("status", "Login Failure");
             requestDispatcher.forward(request, response);
         }
+    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doRequest(request, response);
+    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doRequest(request, response);
     }
 
 }

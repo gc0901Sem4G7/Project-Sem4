@@ -7,8 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 </head>
 <body>
 	<div id="wrapper">
@@ -18,7 +18,7 @@
 		
 		<div id="login">
 			<form action="login" method="POST" role="form">
-				<legend>Login Admin</legend>
+				<legend>Đăng nhập Quản trị</legend>
 				<span style="color: red;">
 					<%
 					String status = request.getAttribute("status") + "";
@@ -32,16 +32,16 @@
 				
 				
 				<div class="form-group">
-					<label for="">Username</label>
-					<input type="text" class="form-control" name="username" id="" placeholder="Input field">
+					<label for="">Tên đăng nhập</label>
+					<input type="text" class="form-control" name="admin" id="" placeholder="Điền tên đăng nhập">
 				</div>
 
 				<div class="form-group">
-					<label for="">Password</label>
-					<input type="text" class="form-control" name="password" id="" placeholder="Input field">
+					<label for="">Mật khẩu</label>
+					<input type="password" class="form-control" name="password" id="" placeholder="Điền mật khẩu">
 				</div>
 			
-				<button type="submit" class="btn btn-primary">Login</button>
+				<button type="submit" class="btn btn-primary">Đăng nhập</button>
 			</form>
 		</div>
 	</div>

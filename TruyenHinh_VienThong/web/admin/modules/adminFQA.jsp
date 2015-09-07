@@ -28,14 +28,14 @@
 
                     <thead>
                         <tr>
-                            <th><span class="green">Cau hoi: </span><%= fqa.getQuestion() %></th>
+                            <th><span class="green">Câu hỏi: </span><%= fqa.getQuestion() %></th>
                         </tr>
                     </thead>
                     <tbody>
                         <% if ("".equals(fqa.getAnswer()) || "null".equals(fqa.getAnswer())) { %>
                             <tr>
                                 <td>
-                                    Trang thai: <span style="color: #F60;">Pending</span>
+                                    Trạng thái: <span style="color: #F60;">Pending</span>
                                 </td>
                             </tr>
                             
@@ -47,7 +47,7 @@
                         <% } else { %>
                             <tr>
                                 <td>
-                                    Noi dung tra loi: <%= fqa.getAnswer() %>
+                                    Nội dung trả lời: <%= fqa.getAnswer() %>
                                 </td>
                             </tr>
                         <% } %>

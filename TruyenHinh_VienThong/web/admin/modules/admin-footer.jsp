@@ -6,8 +6,8 @@
     
 		<div class="clear"></div>
 
-            <div class="footer" id="footer">
-                <div class="panel panel-default">
+            <div class="footer" id="footer" style="margin-top: 20px;">
+                <div class="panel panel-default" style="margin-bottom: 0;">
                     <img src="../img/footer.jpg" alt="" class="img-responsive" style="border-color: #FFF; border-top: 1px solid #DDD; width: 100%; height: 140px;">
                 </div>
             </div>

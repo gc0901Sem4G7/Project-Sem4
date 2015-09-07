@@ -66,7 +66,7 @@ if (!"".endsWith(msg) && !"null".endsWith(msg)) {
             <thead>
               <tr>
                 <th>Tên Dịch Vụ</th>
-                <th>Giá tiền/Tháng</th>
+                <th>Giá tiền/Tháng(VNĐ)</th>
                 <th style="width: 60px;">Thời lượng</th>
                 <th>Thành tiền</th>
                 <th>Ngày bắt đầu</th>

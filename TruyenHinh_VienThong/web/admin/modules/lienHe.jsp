@@ -5,6 +5,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
+        <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         
@@ -18,29 +20,29 @@
                 out.print("<table class='table table-bordered table-hover'>");
                 out.print("<tbody>");
 
-                    out.print("<tr>");
+                    /*out.print("<tr>");
                         out.print("<td>ID</td>");
                         out.print("<td>");
                         out.print(lienHeObject.getId() + "");
                         out.print("</td>");
-                    out.print("</tr>");
+                    out.print("</tr>");*/
 
                     out.print("<tr>");
-                        out.print("<td>Dia chi</td>");
+                        out.print("<td>Địa chỉ</td>");
                         out.print("<td>");
                         out.print(lienHeObject.getDiaChi() + "");
                         out.print("</td>");
                     out.print("</tr>");
 
                     out.print("<tr>");
-                        out.print("<td>Dien thoai</td>");
+                        out.print("<td>Điện thoại</td>");
                         out.print("<td>");
                         out.print(lienHeObject.getDienThoai() + "");
                         out.print("</td>");
                     out.print("</tr>");
 
                     out.print("<tr>");
-                        out.print("<td>Ten cong ty</td>");
+                        out.print("<td>Tên công ty</td>");
                         out.print("<td>");
                         out.print(lienHeObject.getTenCongTy() + "");
                         out.print("</td>");
@@ -60,12 +62,6 @@
                         out.print("</td>");
                     out.print("</tr>");
 
-                    out.print("<tr>");
-                        out.print("<td></td>");
-                        out.print("<td>");
-                        out.print("<button type='submit' class='btn btn-primary'>Edit</button>");
-                        out.print("</td>");
-                    out.print("</tr>");
 
                 out.print("</tbody>");
 

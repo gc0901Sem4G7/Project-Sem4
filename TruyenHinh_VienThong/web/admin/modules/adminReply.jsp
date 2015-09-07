@@ -27,7 +27,7 @@
 
                     <thead>
                         <tr>
-                            <th><span class="green">Cau hoi: </span><%= fqa.getQuestion() %></th>
+                            <th><span class="green">Câu hỏi: </span><%= fqa.getQuestion() %></th>
                         </tr>
                     </thead>
                     <tbody>

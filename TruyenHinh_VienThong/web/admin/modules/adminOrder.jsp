@@ -95,16 +95,16 @@
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
-              <th>Username</th>
+              <th>Tên đăng nhập</th>
               <th>Tên dịch vụ</th>
               <th>Miền</th>
-              <th>Địa chỉ nắp đặt</th>
+              <th>Địa chỉ lắp đặt</th>
               <th>Hình thức thanh toán</th>
               <th>Thời lượng</th>
-              <th>Giá tiền</th>
-              <th>Status</th>
-              <th>Date Register</th>
-              <th>Date End</th>
+              <th>Đơn giá/Tháng(VNĐ)</th>
+              <th>Trạng thái</th>
+              <th>Ngày đăng kí</th>
+              <th>Ngày hết hạn</th>
               <th>Xác nhận</th>
               <th>Hủy</th>
             </tr>

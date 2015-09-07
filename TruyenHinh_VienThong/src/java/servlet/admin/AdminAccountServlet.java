@@ -113,6 +113,76 @@ public class AdminAccountServlet extends HttpServlet {
             
             request.setAttribute("listOrderByTrangThai", listOrderByTrangThai);
             request.setAttribute("request", "account-type-user");
+        } else if (url.endsWith("admin/report")) {
+            
+            if (idSendMail != 0) {
+              String from = "tungptgc00676@fpt.edu.vn";// hom truoc e bao e cung dung gmail mà
+              // day la mail cua fpt mà NO LA GMAIL MA A
+              String to = emailSend.trim(); // email nay la email cua user nam trong database
+
+              final String username = from;
+              final String password = "taolasvfptgw";
+
+              // Assuming you are sending email through relay.jangosmtp.net
+              String host = "smtp.gmail.com";
+
+              Properties props = new Properties();
+              props.put("mail.smtp.auth", "true");
+              props.put("mail.smtp.starttls.enable", "true");
+              props.put("mail.smtp.host", host);
+              props.put("mail.smtp.port", "587");
+
+              // Get the Session object.
+              Session session = Session.getInstance(props,
+              new javax.mail.Authenticator() {
+                 protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(username, password);
+                 }
+              });
+
+              try {
+                 // Create a default MimeMessage object.
+                 Message message = new MimeMessage(session);
+
+                 // Set From: header field of the header.
+                 message.setFrom(new InternetAddress(from));
+
+                 // Set To: header field of the header.
+                 message.setRecipients(Message.RecipientType.TO,
+                 InternetAddress.parse(to));
+
+                 // Set Subject: header field
+                 message.setSubject("Truyen Hinh::Gia han goi");
+
+                 // Now set the actual message
+                 message.setText("Cam on ban thoi gian qua da su dung goi truyen " + tenGoiSend + " hinh cua chung toi.\n"
+                         + "Goi truyen hinh cua ban con duoi 1 thang. Vui long truy cap website truyenhinhvienthong.com de gia han hoac lien he den so dien thoai 043.666.888 de duoc gia han.\n"
+                         + "Xin cam on");
+
+                 // Send message
+                 Transport.send(message);
+
+                 System.out.println("Sent message successfully....");
+                 request.setAttribute("sendMailSuccess", "Gui email thong bao gia han thanh cong!");
+
+              } catch (Exception e) {
+                    throw new RuntimeException(e);
+              }
+            }
+          
+            String trangThai = request.getParameter("trangThaiLoc");;
+            String thoiGian = request.getParameter("thoiGianLoc");;
+        
+        
+            orderModel = new OrderModel();
+            listOrderByTrangThai = new ArrayList<OrderByTrangThai>();
+
+            mien = request.getSession().getAttribute("mien") + "";
+
+            listOrderByTrangThai = orderModel.getAllOrderByMien(mien, trangThai, thoiGian);
+
+            request.setAttribute("listOrderByTrangThai", listOrderByTrangThai);
+            request.setAttribute("request", "account-report");
         } else if (url.endsWith("account-admin")) {
             String action = request.getParameter("action");
             boolean isDelete = false;
@@ -146,6 +216,7 @@ public class AdminAccountServlet extends HttpServlet {
             String email = request.getParameter("email");
             String phone = request.getParameter("phone");
             String address = request.getParameter("address");
+            mien = request.getParameter("mien");
             
             Dealer dealer = new Dealer(id, username, password, name, sex, email, phone, address, mien);
             adminDealerModel.updateDealer("dealer", dealer);
@@ -163,6 +234,7 @@ public class AdminAccountServlet extends HttpServlet {
             String email = request.getParameter("email");
             String phone = request.getParameter("phone");
             String address = request.getParameter("address");
+            mien = request.getParameter("mien");
             
             Dealer dealer = new Dealer(username, password, name, sex, email, phone, address, mien);
             adminDealerModel.insertDealer(dealer, "dealer");

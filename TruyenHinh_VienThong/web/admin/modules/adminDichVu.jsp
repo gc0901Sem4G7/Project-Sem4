@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="content-right" class="content">
-        <h1 class="green">Các gói dịch vụ của dealer gửi lên admin</h1>
+        <h1 class="green">Các gói dịch vụ của Đại lý gửi lên Quản trị</h1>
         <p class="navbar-text">
             <a href="adminThemMoiDichVu" class="navbar-link">Them dich vu moi</a>
 	</p>
@@ -36,12 +36,12 @@
 
                         <thead>
                             <tr>
-                                <th>Ten Dich Vu</th>
-                                <th>Gia Dich Vu</th>
-                                <th>Mo Ta</th>
-                                <th>Trang thai</th>
-                                <th>Nguoi them (username)</th>
-                                <th>Nguoi them (name)</th>
+                                <th>Tên Dịch Vụ</th>
+                                <th>Đơn giá/ Tháng(VNĐ)</th>
+                                <th>Mô Tả</th>
+                                <th>Trạng thái</th>
+                                <th>Người thêm (tên đăng nhập)</th>
+                                <th>Người thêm (họ và tên)</th>
                                 <%
                                 String mien = session.getAttribute("mien") + "";
                                 if (mien.equals("admin")) {

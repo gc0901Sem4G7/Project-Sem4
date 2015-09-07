@@ -9,35 +9,41 @@ public class Dealer {
     private String password;
 
     private String name;
-
-    private String cardId;
-
-    private String phoneNumber;
+    
+    private String sex;
 
     private String email;
 
+    private String phone;
+
     private String address;
 
-    private int packageId;
-
-    private int dealerId;
+    private String mien;
 
     public Dealer() {
     }
 
-    public Dealer(int id, String username, String password, String name, String cardId,
-            String phoneNumber, String email, String address, int packageId,
-            int dealerId) {
+    public Dealer(String username, String password, String name, String sex, String email, String phone, String address, String mien) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.sex = sex;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.mien = mien;
+    }
+    
+    public Dealer(int id, String username, String password, String name, String sex, String email, String phone, String address, String mien) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.name = name;
-        this.cardId = cardId;
-        this.phoneNumber = phoneNumber;
+        this.sex = sex;
         this.email = email;
+        this.phone = phone;
         this.address = address;
-        this.packageId = packageId;
-        this.dealerId = dealerId;
+        this.mien = mien;
     }
 
     public int getId() {
@@ -72,20 +78,12 @@ public class Dealer {
         this.name = name;
     }
 
-    public String getCardId() {
-        return cardId;
+    public String getSex() {
+        return sex;
     }
 
-    public void setCardId(String cardId) {
-        this.cardId = cardId;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getEmail() {
@@ -96,6 +94,14 @@ public class Dealer {
         this.email = email;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -104,20 +110,12 @@ public class Dealer {
         this.address = address;
     }
 
-    public int getPackageId() {
-        return packageId;
+    public String getMien() {
+        return mien;
     }
 
-    public void setPackageId(int packageId) {
-        this.packageId = packageId;
-    }
-
-    public int getDealerId() {
-        return dealerId;
-    }
-
-    public void setDealerId(int dealerId) {
-        this.dealerId = dealerId;
+    public void setMien(String mien) {
+        this.mien = mien;
     }
 
 }

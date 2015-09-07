@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import doituong.DichVu;
+import model.admin.AdminDealerModel;
 import model.admin.AdminDichVuModel;
 
 public class DoThemMoiDichVu extends HttpServlet {
@@ -22,18 +23,26 @@ public class DoThemMoiDichVu extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        out.print("OK");
+        AdminDichVuModel adminDichVuModel = new AdminDichVuModel();
+        
+        AdminDealerModel adminDealerModel = new AdminDealerModel();
+        
         String tenDichVu = request.getParameter("tenDichVu");
         String giaDichVu = request.getParameter("giaDichVu");
         String moTa = request.getParameter("moTa");
-
-        AdminDichVuModel adminDichVuModel = new AdminDichVuModel();
-        boolean isInsert = adminDichVuModel.insert(tenDichVu, giaDichVu, moTa, "waiting" , "dich_vu");
+        
+        String username = request.getSession().getAttribute("username") + "";
+        int dealerId = adminDealerModel.getDealerByUsername(username).getId();
+        
+        String trangThai = "waiting";
+        
+        DichVu obj = new DichVu(tenDichVu, giaDichVu, moTa, dealerId, trangThai);
+        
+        boolean isInsert = adminDichVuModel.insert(obj, "dich_vu");
         System.out.println(isInsert);
         if (isInsert) {
 
-            List<DichVu> listDichVu = adminDichVuModel.getAllDichVu();
+            List<DichVu> listDichVu = adminDichVuModel.getAllDichVu("dich_vu");
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("trangQuanTri.jsp");
             request.setAttribute("request", "cacGoiDichVu");
             request.setAttribute("listDichVu", listDichVu);
